@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the Albinism Foundation of Zambia (AFZ), our mission, team, and commitment to empowering persons with albinism.">
+    <meta name="keywords" content="AFZ, albinism, Zambia, advocacy, inclusion, support">
+    <title>About Us - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#1A1A1A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About AFZ - Albinism Foundation of Zambia">
+    <meta property="og:description" content="Discover our mission to advocate for the rights and inclusion of persons with albinism in Zambia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://christian12w.github.io/afz/pages/about.html">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AFZ Unified Design System -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css?v=updated">
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-black: #1A1A1A;
+            --gold-orange: #F5A623;
+            --gold-orange-dark: #D48F1B;
+            --white: #FFFFFF;
+            --light-gray: #E5E5E5;
+            --dark-gray: #333333;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-black);
+            background: var(--white);
+            margin: 0;
+            text-align: left;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            padding: 8px 16px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('../favicon.jpg') center/cover no-repeat;
+            padding: 3rem 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            min-height: 50vh;
+        }
+
+        .about-hero .page-title {
+            color: var(--white);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .about-hero .page-description {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        .about-hero .hero-divider {
+            width: 100px;
+            height: 4px;
+            background: var(--gold-orange);
+            margin: 0 auto;
+            border-radius: var(--radius-md);
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            padding: 3rem 0;
+            background: var(--light-gray);
+        }
+
+        .founder-story-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .founder-text-content {
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            text-align: left;
+        }
+
+        .founder-text {
+            font-size: 1rem;
+            color: var(--primary-black);
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            text-align: left;
+        }
+
+        .founder-image-container {
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+        }
+
+        .founder-image {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gold-orange);
+            display: block;
+        }
+
+        .founder-caption {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-weight: 400;
+            margin-top: 0.8rem;
+            font-style: italic;
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            padding: 3rem 0;
+            background: var(--white);
+        }
+
+        .welcome-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .welcome-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .welcome-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+
+        .welcome-message {
+            font-size: 1rem;
+            color: var(--primary-black);
+            font-weight: 400;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            text-align: left;
+        }
+
+        .welcome-cta {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .welcome-cta:hover {
+            background: var(--gold-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        .welcome-visual {
+            flex: 0.5;
+            text-align: center;
+        }
+
+        .welcome-icon {
+            background: var(--gold-orange);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+
+        .welcome-icon svg {
+            width: 30px;
+            height: 30px;
+            color: var(--primary-black);
+        }
+
+        /* Management Section */
+        .management-section {
+            padding: 4rem 0;
+            background: var(--white);
+            text-align: center;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(245, 166, 35, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(245, 166, 35, 0.05) 0%, transparent 20%);
+        }
+
+        .management-section .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gold-orange);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .management-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+            max-width: 320px;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .management-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .management-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .management-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .management-card:hover .management-image img {
+            transform: scale(1.05);
+        }
+
+        .management-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .management-role {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            margin: 0 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .management-role::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: var(--gold-orange);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .management-card:hover .management-role::after {
+            opacity: 1;
+        }
+
+        .management-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .management-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .management-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            margin: 0 0 1rem;
+            text-align: center;
+        }
+
+        .management-description {
+            font-size: 1rem;
+            color: var(--primary-black);
+            font-weight: 400;
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* Board of Directors Section */
+        .board-section {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .board-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .board-card:nth-child(1) { animation-delay: 0.2s; }
+        .board-card:nth-child(2) { animation-delay: 0.4s; }
+        .board-card:nth-child(3) { animation-delay: 0.6s; }
+        .board-card:nth-child(4) { animation-delay: 0.8s; }
+        .board-card:nth-child(5) { animation-delay: 1.0s; }
+        .board-card:nth-child(6) { animation-delay: 1.2s; }
+
+        .board-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .board-image {
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: var(--radius-md);
+            border-top-right-radius: var(--radius-md);
+            height: 250px;
+        }
+
+        .board-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .board-role {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin: 1rem 0 0.5rem;
+        }
+
+        .board-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 0.8rem;
+            text-align: center;
+        }
+
+        .board-description {
+            font-size: 1rem;
+            color: var(--primary-black);
+            font-weight: 400;
+            line-height: 1.6;
+            padding: 0 1rem 1rem;
+            text-align: center;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 3rem 0;
+            background: var(--light-gray);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.2s; }
+        .value-card:nth-child(2) { animation-delay: 0.4s; }
+        .value-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .value-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.8rem;
+            background: var(--gold-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+        }
+
+        .value-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin-bottom: 0.6rem;
+        }
+
+        .value-description {
+            font-size: 1rem;
+            color: var(--primary-black);
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(245, 166, 35, 0.05);
+        }
+
+        .stats-section .section-title {
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(245, 166, 35, 0.15);
+            border: 1px solid var(--gold-orange);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 5rem 0;
+            background: var(--light-gray);
+        }
+
+        .impact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .impact-header .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .impact-header .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .impact-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .impact-category {
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--gold-orange);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .impact-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold-orange);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .impact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .impact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: var(--gold-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+        }
+
+        .impact-icon svg {
+            width: 35px;
+            height: 35px;
+        }
+
+        .impact-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .impact-label {
+            font-size: 1.1rem;
+            color: var(--gold-orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .impact-summary {
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-gray) 100%);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-summary::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(245, 166, 35, 0.1);
+        }
+
+        .impact-summary::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(245, 166, 35, 0.1);
+        }
+
+        .summary-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .summary-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-text {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .summary-cta {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold-orange);
+        }
+
+        .summary-cta:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 3rem 0;
+            background: var(--white);
+        }
+
+        .cta-content {
+            text-align: center;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button.primary {
+            background: var(--gold-orange);
+            color: var(--primary-black);
+        }
+
+        .cta-button.primary:hover {
+            background: var(--gold-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--gold-orange);
+            border: 2px solid var(--gold-orange);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+        }
+
+        /* Redesigned Header Styles */
+        .site-header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .header-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .header-menu a {
+            color: var(--primary-black);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .header-menu a:hover {
+            color: var(--gold-orange);
+        }
+
+        .header-cta {
+            padding: 0.5rem 1.5rem;
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--gold-orange-dark);
+        }
+
+        .header-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header-social a svg {
+            width: 20px;
+            height: 20px;
+            color: var(--dark-gray);
+            transition: color 0.3s ease;
+        }
+
+        .header-social a:hover svg {
+            color: var(--gold-orange);
+        }
+
+        /* Redesigned Footer Styles */
+        .footer {
+            background: var(--primary-black);
+            color: var(--light-gray);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+        }
+
+        .footer-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-link {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--gold-orange);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a svg {
+            width: 24px;
+            height: 24px;
+            color: var(--light-gray);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover svg {
+            color: var(--gold-orange);
+        }
+
+        .footer-newsletter {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-newsletter-input {
+            padding: 0.75rem;
+            border: 1px solid var(--dark-gray);
+            background: var(--white);
+            border-radius: var(--radius-md);
+            color: var(--primary-black);
+        }
+
+        .footer-newsletter-button {
+            padding: 0.75rem;
+            background: var(--gold-orange);
+            color: var(--primary-black);
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .footer-newsletter-button:hover {
+            background: var(--gold-orange-dark);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--dark-gray);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-legal a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--gold-orange);
+        }
+
+        /* Redesigned Partners Section Styles */
+        .partners-section {
+            background: var(--light-gray);
+            padding: 4rem 0;
+        }
+
+        .partners-container {
+            text-align: center;
+        }
+
+        .partners-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            margin-bottom: 1rem;
+        }
+
+        .partners-subtitle {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .partners-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .partners-category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+
+        .category-description {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .partners-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .partners-logo {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
+            padding: 1rem;
+        }
+
+        .partners-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .partners-logo img {
+            max-width: 150px;
+            height: auto;
+            transition: filter 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .partners-logo:hover img {
+            filter: grayscale(0%);
+        }
+
+        .partners-logo::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold-orange);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .partners-logo:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Redesigned Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="../favicon.jpg" alt="AFZ Logo">
+                <span class="header-logo-text">Albinism Foundation of Zambia</span>
+            </div>
+            <nav class="header-nav">
+                <div class="header-menu">
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="advocacy.html">Advocacy</a>
+                    <a href="events.html">Events</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <a href="donate.html" class="header-cta">Donate Now</a>
+                <div class="header-social">
+                    <a href="https://www.facebook.com/albinism.zambia" aria-label="Facebook" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V6l8 5-8 5v2z"/></svg>
+                    </a>
+                    <a href="https://x.com/AlbinismZambia1" aria-label="Twitter" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.60v.06c0 2.33 1.66 4.28 3.86 4.72-.40.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@albinismfoundationofzambia5849" aria-label="YouTube" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero" aria-labelledby="about-hero-heading">
+            <div class="container">
+                <h1 id="about-hero-heading" class="page-title">About the Albinism Foundation of Zambia</h1>
+                <p class="page-description">
+                    Learn about our mission, vision, and the dedicated team working to empower persons with albinism across Zambia.
+                </p>
+                <div class="hero-divider"></div>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section class="founder-section" aria-labelledby="founder-heading">
+            <div class="container">
+                <h2 id="founder-heading" class="section-title">Our Founder's Story</h2>
+                <div class="founder-story-wrapper">
+                    <div class="founder-text-content">
+                        <p class="founder-text">
+                            The Albinism Foundation of Zambia (AFZ) was founded in 2008 by John Chiti, a pioneering advocate and musician who became the first person with albinism to gain prominence in Zambia. Rejected by his biological father at birth due to his albinism, John faced significant discrimination and challenges from an early age. Despite these obstacles, he pursued his passion for music and became an established artist.
+                        </p>
+                        <p class="founder-text">
+                            John's personal journey with albinism, including facing discrimination and understanding the unique challenges faced by people with albinism in Zambia, led him to establish AFZ. His vision was to create a society where persons with albinism are fully integrated, protected, and empowered. As the first albinism foundation in Zambia, AFZ has been instrumental in advocating for the rights and welfare of people with albinism, raising awareness, and fighting against the discrimination and violence they often face.
+                        </p>
+                        <p class="founder-text">
+                            Under John's leadership, AFZ has grown to become a significant voice for people with albinism in Zambia and internationally. The organization has worked tirelessly to break down barriers, provide support services, and build bridges of understanding and inclusion. John's work has been recognized with several awards, including the Commonwealth Points of Light award signed by Queen Elizabeth II, and he is a 2018 Mandela Washington Fellow (YALI USA).
+                        </p>
+                    </div>
+                    <div class="founder-image-container">
+                        <img src="../images/john-chiti.jpg" alt="Founder of Albinism Foundation of Zambia - John Chiti" class="founder-image" width="400" height="300">
+                        <p class="founder-caption">John Chiti - Founder of AFZ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="mission-section" aria-labelledby="history-heading">
+            <div class="container">
+                <h2 id="history-heading" class="section-title">Our History</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">2008 - Foundation</h3>
+                        <p class="value-description">
+                            AFZ was founded by John Chiti with a mission to advocate for the rights of persons with albinism in Zambia.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">2010 - First Programs</h3>
+                        <p class="value-description">
+                            Launched our first comprehensive programs including sunscreen distribution and educational support.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19v2h-2V2h-2v2h-2V2h-2v2H9V2H7v2H5V2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">2015 - National Recognition</h3>
+                        <p class="value-description">
+                            Recognized by the Zambian government for our contributions to disability rights and community advocacy.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">2020 - Expanded Reach</h3>
+                        <p class="value-description">
+                            Extended our programs to all provinces of Zambia, serving over 500 beneficiaries annually.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section" aria-labelledby="mission-heading">
+            <div class="container">
+                <h2 id="mission-heading" class="section-title">Our Mission & Vision</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Mission</h3>
+                        <p class="value-description">
+                            To advocate for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Vision</h3>
+                        <p class="value-description">
+                            A Zambia where persons with albinism live with dignity, equality, and opportunity, fully integrated into society.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H19v2h-2V2h-2v2h-2V2h-2v2H9V2H7v2H5V2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Core Values</h3>
+                        <p class="value-description">
+                            Advocacy, Inclusion, Empowerment, Integrity, and Community Partnership guide everything we do.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Management Team Section -->
+        <section class="management-section" aria-labelledby="management-heading">
+            <div class="container">
+                <h2 id="management-heading" class="section-title">Our Leadership Team</h2>
+                <div class="management-grid">
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/executive-director.jpg" alt="Executive Director of AFZ - Jessica Dayal" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Executive Director</h3>
+                            <h4 class="management-name">Jessica Dayal</h4>
+                            <p class="management-description">
+                                Leading the strategic vision and operations of AFZ to advance advocacy and support for persons with albinism.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/accountant.jpg" alt="Accountant of AFZ - Ngandwe Kabuka" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Accountant</h3>
+                            <h4 class="management-name">Ngandwe Kabuka</h4>
+                            <p class="management-description">
+                                Ensuring financial transparency, accountability, and effective resource management for AFZ's initiatives.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/programs-coordinator.jpg" alt="Programs Coordinator of AFZ - John Mwanza" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Programs Coordinator</h3>
+                            <h4 class="management-name">John Mwanza</h4>
+                            <p class="management-description">
+                                Leading our community programs and initiatives.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/administrative-officer.jpg" alt="Administrative Officer of AFZ - Emily Mbuzi" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Administrative Officer</h3>
+                            <h4 class="management-name">Emily Mbuzi</h4>
+                            <p class="management-description">
+                                Ensuring smooth operations and member support.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/lusaka-coordinator.jpg" alt="Lusaka Branch Coordinator of AFZ - Susan Phiri" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Lusaka Branch Coordinator</h3>
+                            <h4 class="management-name">Susan Phiri</h4>
+                            <p class="management-description">
+                                Coordinating our Lusaka branch activities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="management-card">
+                        <div class="management-image">
+                            <img src="../images/media-manager.jpg" alt="Social Media Manager of AFZ - Taabo Elizabeth Muyunda" width="320" height="250">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role">Social Media Manager</h3>
+                            <h4 class="management-name">Taabo Elizabeth Muyunda</h4>
+                            <p class="management-description">
+                                Amplify our message to reach more people.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board of Directors Section -->
+        <section class="board-section" aria-labelledby="board-heading">
+            <div class="container">
+                <h2 id="board-heading" class="section-title">Board of Directors</h2>
+                <div class="board-grid">
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-chairperson.jpg" alt="Board Chairperson - John Chiti" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Chairperson</h3>
+                        <h4 class="board-name">John Chiti</h4>
+                        <p class="board-description">
+                            Founder and visionary leader of AFZ, bringing his musical fame and personal experience to advocate for change.
+                        </p>
+                    </div>
+                    
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-vice-chairperson.jpg" alt="Board Vice Chairperson - Coretta Meki" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Vice Chairperson</h3>
+                        <h4 class="board-name">Coretta Meki</h4>
+                        <p class="board-description">
+                            Supporting our mission with strategic leadership and community engagement expertise.
+                        </p>
+                    </div>
+                    
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-member1.jpg" alt="Board Member - Bernadette Tembo" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Member</h3>
+                        <h4 class="board-name">Bernadette Tembo</h4>
+                        <p class="board-description">
+                            Contributing valuable insights and experience to guide our organization's growth.
+                        </p>
+                    </div>
+                    
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-member2.jpg" alt="Board Member - Bruce Chooma" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Member</h3>
+                        <h4 class="board-name">Bruce Chooma</h4>
+                        <p class="board-description">
+                            Providing strategic guidance and supporting our mission to create positive change.
+                        </p>
+                    </div>
+                    
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-member3.jpg" alt="Board Member - Thomas Mtonga" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Member</h3>
+                        <h4 class="board-name">Thomas Mtonga</h4>
+                        <p class="board-description">
+                            Bringing diverse perspectives and expertise to strengthen our foundation.
+                        </p>
+                    </div>
+                    
+                    <div class="board-card">
+                        <div class="board-image">
+                            <img src="../images/board-member4.jpg" alt="Board Member - Johans Mtonga" width="280" height="250">
+                        </div>
+                        <h3 class="board-role">Board Member</h3>
+                        <h4 class="board-name">Johans Mtonga</h4>
+                        <p class="board-description">
+                            Leveraging expertise in advocacy and community engagement to advance AFZ's mission.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading" class="section-title" data-translate="cta-title">Join Our Mission</h2>
+                <div class="cta-content">
+                    <p class="cta-description">
+                        Be part of our community to support, advocate, and empower persons with albinism in Zambia. Together, we can make a lasting impact.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                        <a href="donate.html" class="cta-button secondary">Support Our Cause</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section" aria-labelledby="impact-heading">
+            <div class="container">
+                <div class="impact-header">
+                    <h2 id="impact-heading" class="section-title">Our Impact</h2>
+                    <p class="section-subtitle">
+                        Through our dedicated programs and initiatives, we've made significant strides in improving the lives of persons with albinism in Zambia.
+                    </p>
+                </div>
+                
+                <div class="impact-categories">
+                    <div class="impact-category">
+                        <h3 class="category-title">Direct Support</h3>
+                        <div class="impact-grid">
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">500+</div>
+                                <div class="impact-label">Beneficiaries</div>
+                                <p class="impact-description">
+                                    Individuals directly supported through our comprehensive programs and services.
+                                </p>
+                            </div>
+                            
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">120+</div>
+                                <div class="impact-label">Students</div>
+                                <p class="impact-description">
+                                    Supported with educational resources and scholarships to pursue their dreams.
+                                </p>
+                            </div>
+                            
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63c-.34-1.02-1.28-1.74-2.38-1.74H13c-.8 0-1.56.31-2.13.87l-4.04 4.04c-.79.79-.79 2.07 0 2.86s2.07.79 2.86 0L12 14.83V22h4zm-7.5-10.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">85+</div>
+                                <div class="impact-label">People Trained</div>
+                                <p class="impact-description">
+                                    In advocacy, awareness, and skills development to empower our community.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="impact-category">
+                        <h3 class="category-title">Community Reach</h3>
+                        <div class="impact-grid">
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zm-10-7H7v2h4v2l4-3-4-3v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">24,000+</div>
+                                <div class="impact-label">Sunscreen Tubes</div>
+                                <p class="impact-description">
+                                    Distributed to protect our community from harmful UV radiation.
+                                </p>
+                            </div>
+                            
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.89-8.9c-1.78-.59-2.64-.96-2.64-1.9 0-1.02 1.11-1.39 2.54-1.39 1.67 0 2.43.95 2.5 2.31h1.58c-.08-2.82-2.17-3.82-3.89-3.82-2.38 0-3.68 1.55-3.68 3.39 0 2.01 1.52 2.68 3.78 3.59 2.17.87 2.69 1.69 2.69 2.86 0 1.7-1.58 2.31-3.5 2.31-2.19 0-3.32-1.19-3.42-2.95h-1.6c.1 2.7 2.15 3.69 4.25 3.69 2.73 0 4.25-1.46 4.25-3.5 0-2.5-2.17-3.12-4.5-3.99z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">10,000+</div>
+                                <div class="impact-label">People Reached</div>
+                                <p class="impact-description">
+                                    Through our awareness campaigns and community outreach programs.
+                                </p>
+                            </div>
+                            
+                            <div class="impact-card">
+                                <div class="impact-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="impact-number">8</div>
+                                <div class="impact-label">Provinces</div>
+                                <p class="impact-description">
+                                    Across Zambia where we've implemented our life-changing programs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="impact-summary">
+                    <div class="summary-content">
+                        <h3 class="summary-title">Transforming Lives Across Zambia</h3>
+                        <p class="summary-text">
+                            Since our founding in 2008, AFZ has been at the forefront of advocacy and support for persons with albinism in Zambia. 
+                            Our comprehensive approach addresses not just immediate needs like sunscreen protection, but also long-term empowerment 
+                            through education, skills development, and community awareness. We're proud of the tangible difference we've made 
+                            in the lives of hundreds of individuals and their families.
+                        </p>
+                        <a href="contact.html" class="summary-cta">Join Our Mission</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redesigned Partners Section (Moved outside footer for prominence) -->
+        <section class="partners-section" aria-labelledby="partners-title">
+            <div class="container partners-container">
+                <h2 id="partners-title" class="partners-title">Our Partners</h2>
+                <p class="partners-subtitle">
+                    We collaborate with dedicated organizations to advance the rights and inclusion of persons with albinism in Zambia.
+                </p>
+                <div class="partners-categories">
+                    <div class="partners-category">
+                        <h3 class="category-title">Key Supporters</h3>
+                        <p class="category-description">Organizations providing crucial financial support and strategic partnership</p>
+                        <div class="partners-logos">
+                            <a href="https://steps.co.za/" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/steps.png" alt="STEPS Clubfoot Care">
+                            </a>
+                            <a href="https://www.sightsavers.org/" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/sightsavers.svg" alt="Sightsavers">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="partners-category">
+                        <h3 class="category-title">Collaborative Partners</h3>
+                        <p class="category-description">Organizations working with us on advocacy and community initiatives</p>
+                        <div class="partners-logos">
+                            <a href="https://zafod.org.zm" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/Zafod.png" alt="ZAFOD - Zambia Federation of Disability Organisations">
+                            </a>
+                            <a href="https://www.zambia.gov.zm/" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/grz.svg" alt="GRZ - Government of the Republic of Zambia">
+                            </a>
+                            <a href="https://zapd.org.zm" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/zapd.png" alt="ZAPD - Zambia Agency for Persons with Disabilities">
+                            </a>
+                            <a href="https://disabilityrightswatch.net" target="_blank" rel="noopener" class="partners-logo">
+                                <img src="../images/partners/disabilityrightswatch.png" alt="Disability Rights Watch">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Redesigned Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <div class="footer-logo-container">
+                        <img src="../favicon.jpg" alt="AFZ Logo" class="footer-logo">
+                        <span class="footer-title">Albinism Foundation of Zambia</span>
+                    </div>
+                    <p class="footer-description">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/albinism.zambia" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V6l8 5-8 5v2z"/></svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.60v.06c0 2.33 1.66 4.28 3.86 4.72-.40.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.414v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="../index.html" class="footer-link">Home</a>
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="advocacy.html" class="footer-link">Advocacy</a>
+                        <a href="events.html" class="footer-link">Events</a>
+                        <a href="resources.html" class="footer-link">Resources</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Us</h4>
+                    <div class="footer-contact">
+                        <p class="footer-contact-item">
+                            <span aria-hidden="true">📍</span> AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)
+                        </p>
+                        <p class="footer-contact-item">
+                            <span aria-hidden="true">📧</span> info@afz.org.zm
+                        </p>
+                        <p class="footer-contact-item">
+                            <span aria-hidden="true">📞</span> +260 97 7977026
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Newsletter</h4>
+                    <p class="footer-description">Stay updated with our latest news and initiatives.</p>
+                    <form class="footer-newsletter">
+                        <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="footer-newsletter-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2025 Albinism Foundation of Zambia - AFZ. All rights reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/pwa.js"></script>
+</body>
+</html>
