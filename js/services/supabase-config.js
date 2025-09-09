@@ -37,12 +37,12 @@ class AFZSupabaseConfig {
             },
             staging: {
                 url: this.getEnvVar('SUPABASE_URL', 'https://vzkbvhqvrazbxbhkynfy.supabase.co'),
-                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'your-staging-anon-key'),
+                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6a2J2aHF2cmF6YnhiaGt5bmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxNjg3MTEsImV4cCI6MjA3Mjc0NDcxMX0.e0SZ_Jl1BRDiAyOqYUDY1jKCphKTeYg2UseVMzMJ-ak'),
                 redirectUrl: this.getEnvVar('SUPABASE_REDIRECT_URL', `${window.location.origin}/pages/member-hub.html`)
             },
             production: {
                 url: this.getEnvVar('SUPABASE_URL', 'https://vzkbvhqvrazbxbhkynfy.supabase.co'),
-                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'your-production-anon-key'),
+                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6a2J2aHF2cmF6YnhiaGt5bmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxNjg3MTEsImV4cCI6MjA3Mjc0NDcxMX0.e0SZ_Jl1BRDiAyOqYUDY1jKCphKTeYg2UseVMzMJ-ak'),
                 redirectUrl: this.getEnvVar('SUPABASE_REDIRECT_URL', `${window.location.origin}/pages/member-hub.html`)
             }
         };

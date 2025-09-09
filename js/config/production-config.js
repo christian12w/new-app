@@ -32,9 +32,9 @@ class AFZProductionConfig {
             
             // Supabase Configuration
             supabase: {
-                url: this.getEnvVar('SUPABASE_URL', 'https://yourproject.supabase.co'),
-                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'your-anon-key'),
-                serviceRoleKey: this.getEnvVar('SUPABASE_SERVICE_ROLE_KEY', 'your-service-role-key'),
+                url: this.getEnvVar('SUPABASE_URL', 'https://vzkbvhqvrazbxbhkynfy.supabase.co'),
+                anonKey: this.getEnvVar('SUPABASE_ANON_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6a2J2aHF2cmF6YnhiaGt5bmZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxNjg3MTEsImV4cCI6MjA3Mjc0NDcxMX0.e0SZ_Jl1BRDiAyOqYUDY1jKCphKTeYg2UseVMzMJ-ak'),
+                serviceRoleKey: this.getEnvVar('SUPABASE_SERVICE_ROLE_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ6a2J2aHF2cmF6YnhiaGt5bmZ5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NzE2ODcxMSwiZXhwIjoyMDcyNzQ0NzExfQ.O_D1avuFo_-Xv6mhUSz7LUifR1R12X_1WOaVLdr0FlA'),
                 redirectUrl: this.getEnvVar('SUPABASE_REDIRECT_URL', `${window.location.origin}/pages/member-hub.html`)
             },
 
