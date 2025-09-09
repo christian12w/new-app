@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFZ Backend Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .status { padding: 1rem; margin: 1rem 0; border-radius: 4px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.5rem; }
+        input, select, textarea { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #2b6cb0; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+        button:hover { background: #2563eb; }
+        button:disabled { background: #9ca3af; cursor: not-allowed; }
+        .api-status { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AFZ Backend Integration Test</h1>
+        
+        <div class="api-status">
+            <h3>Backend Status</h3>
+            <div id="backendStatus" class="status">Checking backend connection...</div>
+        </div>
+        
+        <h3>Test Contact Form</h3>
+        <form id="testContactForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="john.doe@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="+260 97 1234567">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject" required>
+                    <option value="support">Request Support</option>
+                    <option value="volunteer">Volunteer Inquiry</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="media">Media Inquiry</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required>This is a test message to verify the AFZ backend integration is working correctly.</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="newsletter" checked> Subscribe to newsletter
+                </label>
+            </div>
+            
+            <button type="submit" id="submitBtn">Send Test Message</button>
+        </form>
+        
+        <div id="responseMessage" style="margin-top: 2rem;"></div>
+        
+        <h3>Newsletter Test</h3>
+        <form id="testNewsletterForm">
+            <div class="form-group">
+                <label for="newsletterEmail">Email:</label>
+                <input type="email" id="newsletterEmail" name="email" value="newsletter@example.com" required>
+            </div>
+            <button type="submit">Test Newsletter Subscription</button>
+        </form>
+        
+        <div id="newsletterResponse" style="margin-top: 1rem;"></div>
+    </div>
+    
+    <script>
+        // Check backend status
+        async function checkBackendStatus() {
+            const statusDiv = document.getElementById('backendStatus');
+            try {
+                const response = await fetch('http://localhost:3000/api/health');
+                const data = await response.json();
+                statusDiv.className = 'status success';
+                statusDiv.innerHTML = `✅ Backend is running! Status: ${data.status}<br>Server time: ${new Date(data.timestamp).toLocaleString()}`;
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = `❌ Backend connection failed: ${error.message}`;
+            }
+        }
+        
+        // Test contact form
+        document.getElementById('testContactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const responseDiv = document.getElementById('responseMessage');
+            const formData = new FormData(e.target);
+            
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                subject: formData.get('subject'),
+                message: formData.get('message'),
+                newsletter: formData.get('newsletter') === 'on',
+                language: 'en'
+            };
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            try {
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    responseDiv.className = 'status success';
+                    responseDiv.innerHTML = `✅ Success! ${result.message}<br>Reference ID: ${result.reference_id}`;
+                } else {
+                    responseDiv.className = 'status error';
+                    responseDiv.innerHTML = `❌ Error: ${result.message}`;
+                }
+            } catch (error) {
+                responseDiv.className = 'status error';
+                responseDiv.innerHTML = `❌ Error: ${error.message}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Test Message';
+            }
+        });
+        
+        // Test newsletter
+        document.getElementById('testNewsletterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const responseDiv = document.getElementById('newsletterResponse');
+            
+            try {
+                const response = await fetch('http://localhost:3000/api/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        language: 'en',
+                        source: 'test-page'
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    responseDiv.className = 'status success';
+                    responseDiv.innerHTML = `✅ Newsletter test successful! ${result.message}`;
+                } else {
+                    responseDiv.className = 'status error';
+                    responseDiv.innerHTML = `❌ Error: ${result.message}`;
+                }
+            } catch (error) {
+                responseDiv.className = 'status error';
+                responseDiv.innerHTML = `❌ Error: ${error.message}`;
+            }
+        });
+        
+        // Initialize
+        checkBackendStatus();
+        setInterval(checkBackendStatus, 30000); // Check every 30 seconds
+    </script>
+    
+    <!-- Copyright Year Script -->
+    <script src="./js/copyright-year.js"></script>
+</body>
+</html>

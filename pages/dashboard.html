@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Member Dashboard - Access your personalized resources and track your involvement with the Albinism Foundation of Zambia - AFZ">
+    <meta name="keywords" content="AFZ, dashboard, member, albinism, Zambia, resources, events, donations">
+    <meta name="author" content="Albinism Foundation of Zambia - AFZ">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Member Dashboard - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Access your personalized member dashboard">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/dashboard.html">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <title>Member Dashboard - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css?v=f274f2f4">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- PWA Icons for iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/pwa-icons/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="../images/pwa-icons/splash-screen.png">
+    <meta name="apple-mobile-web-app-title" content="AFZ Advocacy">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body class="dashboard-page">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            
+            <div class="logo-section">
+                <img src="../favicon.jpg" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Breaking the silence on Albinism</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
+                    <li><a href="programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="events.html" class="nav-link" data-translate="nav-events">Events</a></li>
+                    <li><a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="member-hub.html" class="nav-link active" data-translate="nav-member-portal">Member Hub</a></li>
+                    <li><a href="donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="dashboard-main">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <h1 class="welcome-title">Welcome back, John!</h1>
+                    <p class="welcome-subtitle">Here's what's happening in your AFZ community</p>
+                    <div class="quick-actions">
+                        <a href="#resources" class="quick-action-btn primary">
+                            <span class="action-icon">📚</span>
+                            Browse Resources
+                        </a>
+                        <a href="#events" class="quick-action-btn secondary">
+                            <span class="action-icon">📅</span>
+                            Upcoming Events
+                        </a>
+                        <a href="#donate" class="quick-action-btn accent">
+                            <span class="action-icon">💝</span>
+                            Make a Donation
+                        </a>
+                    </div>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <span class="stat-value">1,248</span>
+                            <span class="stat-label">Community Members</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📚</div>
+                        <div class="stat-info">
+                            <span class="stat-value">156</span>
+                            <span class="stat-label">Resources Available</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <span class="stat-value">23</span>
+                            <span class="stat-label">Events This Month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <section class="dashboard-content">
+            <div class="container">
+                <div class="dashboard-grid">
+                    <!-- My Activity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">My Activity</h3>
+                            <a href="#activity" class="card-link">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">📅</div>
+                                    <div class="activity-info">
+                                        <span class="activity-title">Registered for Albinism Awareness Workshop</span>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">💝</div>
+                                    <div class="activity-info">
+                                        <span class="activity-title">Donated K200 to AFZ Foundation</span>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon">📚</div>
+                                    <div class="activity-info">
+                                        <span class="activity-title">Downloaded Skincare Guide</span>
+                                        <span class="activity-time">3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Events -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Upcoming Events</h3>
+                            <a href="./events.html" class="card-link">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="event-list">
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="event-day">24</span>
+                                        <span class="event-month">AUG</span>
+                                    </div>
+                                    <div class="event-info">
+                                        <h4 class="event-title">Albinism Awareness Workshop</h4>
+                                        <p class="event-details">Lusaka Community Center • 2:00 PM</p>
+                                        <span class="event-status registered">Registered</span>
+                                    </div>
+                                </div>
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <span class="event-day">30</span>
+                                        <span class="event-month">AUG</span>
+                                    </div>
+                                    <div class="event-info">
+                                        <h4 class="event-title">Healthcare Access Forum</h4>
+                                        <p class="event-details">Virtual Event • 10:00 AM</p>
+                                        <a href="#register" class="event-register-btn">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- My Resources -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">My Resources</h3>
+                            <a href="./resources.html" class="card-link">Browse All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="resource-grid">
+                                <div class="resource-item">
+                                    <div class="resource-icon">🧴</div>
+                                    <div class="resource-info">
+                                        <h4 class="resource-title">Skincare Guide</h4>
+                                        <span class="resource-type">PDF</span>
+                                    </div>
+                                    <button class="resource-action" aria-label="Download">📥</button>
+                                </div>
+                                <div class="resource-item">
+                                    <div class="resource-icon">🏥</div>
+                                    <div class="resource-info">
+                                        <h4 class="resource-title">Healthcare Directory</h4>
+                                        <span class="resource-type">PDF</span>
+                                    </div>
+                                    <button class="resource-action" aria-label="Download">📥</button>
+                                </div>
+                                <div class="resource-item">
+                                    <div class="resource-icon">⚖️</div>
+                                    <div class="resource-info">
+                                        <h4 class="resource-title">Legal Rights Guide</h4>
+                                        <span class="resource-type">PDF</span>
+                                    </div>
+                                    <button class="resource-action" aria-label="Download">📥</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Impact -->
+                    <div class="dashboard-card impact-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Your Impact</h3>
+                            <a href="./donate.html" class="card-link">Donate More</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="impact-summary">
+                                <div class="impact-stat">
+                                    <span class="impact-value">K850</span>
+                                    <span class="impact-label">Total Donated</span>
+                                </div>
+                                <div class="impact-stat">
+                                    <span class="impact-value">12</span>
+                                    <span class="impact-label">People Helped</span>
+                                </div>
+                            </div>
+                            <div class="impact-progress">
+                                <div class="progress-info">
+                                    <span class="progress-label">Monthly Goal Progress</span>
+                                    <span class="progress-value">K850 / K1,000</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Community Feed -->
+                    <div class="dashboard-card community-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Community Updates</h3>
+                            <a href="#community" class="card-link">Join Discussion</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="community-updates">
+                                <div class="update-item">
+                                    <div class="update-avatar">MA</div>
+                                    <div class="update-content">
+                                        <div class="update-header">
+                                            <strong>Mary Banda</strong> shared a success story
+                                            <span class="update-time">5 min ago</span>
+                                        </div>
+                                        <p class="update-text">Thanks to AFZ's support, I was able to access proper healthcare for my son...</p>
+                                        <div class="update-actions">
+                                            <button class="update-action">👍 12</button>
+                                            <button class="update-action">💬 3</button>
+                                            <button class="update-action">↗️ Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-avatar">AF</div>
+                                    <div class="update-content">
+                                        <div class="update-header">
+                                            <strong>AFZ Team</strong> posted an announcement
+                                            <span class="update-time">2 hours ago</span>
+                                        </div>
+                                        <p class="update-text">New healthcare partnerships established in Copperbelt Province...</p>
+                                        <div class="update-actions">
+                                            <button class="update-action">👍 28</button>
+                                            <button class="update-action">💬 7</button>
+                                            <button class="update-action">↗️ Share</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="dashboard-card quick-links-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Quick Links</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="quick-links">
+                                <a href="#support" class="quick-link">
+                                    <div class="quick-link-icon">🤝</div>
+                                    <span class="quick-link-title">Get Support</span>
+                                </a>
+                                <a href="#volunteer" class="quick-link">
+                                    <div class="quick-link-icon">🙋‍♀️</div>
+                                    <span class="quick-link-title">Volunteer</span>
+                                </a>
+                                <a href="#feedback" class="quick-link">
+                                    <div class="quick-link-icon">💭</div>
+                                    <span class="quick-link-title">Feedback</span>
+                                </a>
+                                <a href="./contact.html" class="quick-link">
+                                    <div class="quick-link-icon">📞</div>
+                                    <span class="quick-link-title">Contact Us</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-translate="footer_sections.about.title">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text" data-translate="footer_sections.about.description">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" data-translate="social.facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" data-translate="social.twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" data-translate="social.linkedin" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" data-translate="social.youtube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.quick_links.title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="footer-link" data-translate="nav-home">Home</a></li>
+                        <li><a href="./about.html" class="footer-link" data-translate="nav-about">About Us</a></li>
+                        <li><a href="./programs.html" class="footer-link" data-translate="nav-programs">Programs</a></li>
+                        <li><a href="./advocacy.html" class="footer-link" data-translate="nav-advocacy">Advocacy</a></li>
+                        <li><a href="./events.html" class="footer-link" data-translate="nav-events">Events</a></li>
+                        <li><a href="./contact.html" class="footer-link" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.contact.title">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><strong data-translate="contact.email_label">Email:</strong> afz.zambia@gmail.com</p>
+                        <p><strong data-translate="contact.phone_label">Phone:</strong> +260 97 7977026</p>
+                        <p><strong data-translate="contact.address_label">Address:</strong> AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.support.title">Support Our Cause</h4>
+                    <p class="footer-text" data-translate="footer_sections.support.description">
+                        Help us advocate for persons with albinism in Zambia.
+                    </p>
+                    <a href="./donate.html" class="cta-button primary" data-translate="footer_sections.support.donate">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    <span data-translate="footer_sections.copyright">&copy; 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
+                </p>
+                <div class="footer-legal">
+                    <a href="#" data-translate="footer_sections.privacy">Privacy Policy</a>
+                    <a href="#" data-translate="footer_sections.terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js?v=20250828"></script>
+    <script src="../js/auth-guard.js?v=20250828"></script>
+    <script src="../js/main.js?v=20250828"></script>
+    <script src="../js/language.js?v=20250828"></script>
+    <script src="../js/navigation.js?v=20250828"></script>
+    <script src="../js/dashboard.js?v=20250828"></script>
+    <script src="../js/pwa.js?v=20250828"></script>
+    
+    <!-- Screen reader announcements -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

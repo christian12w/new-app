@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFZ Member Hub - Connect, collaborate, and access resources in the Albinism Foundation of Zambia community">
+    <meta name="keywords" content="AFZ, member hub, albinism, community, resources, events, networking">
+    <meta name="author" content="Albinism Foundation of Zambia - AFZ">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Member Hub - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Connect and collaborate in the AFZ community">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/member-hub.html">
+    <meta property="og:image" content="../favicon.jpg">
+    
+    <title>Member Hub - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css?v=updated">
+    <link rel="stylesheet" href="../css/member-hub.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance hints -->
+    <link rel="preload" href="../css/member-hub.css" as="style">
+    <link rel="prefetch" href="../js/member-hub.js">
+    <link rel="preload" href="../favicon.jpg" as="image">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body class="member-hub-page" data-user-role="member" data-auth-status="checking">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../favicon.jpg" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">AFZ Member Hub</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Connect, Learn, Advocate</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only" data-translate="accessibility.toggle_navigation">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
+                    <li><a href="./about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
+                    <li><a href="./programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="./resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="./advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="./events.html" class="nav-link" data-translate="nav-events">Events</a></li>
+                    <li><a href="./contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="./member-hub.html" class="nav-link active" data-translate="nav-member-portal">Member Hub</a></li>
+                    <li><a href="./donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Authentication Required Screen -->
+    <div id="auth-required-screen" class="auth-required-screen" style="display: none;">
+        <div class="auth-required-content">
+            <div class="auth-required-logo">
+                <img src="../favicon.jpg" alt="AFZ Logo" width="120" height="120">
+            </div>
+            <div class="auth-required-text">
+                <h2>Member Access Required</h2>
+                <p>Please sign in or create an account to access the AFZ Member Hub</p>
+                <div class="auth-benefits-quick">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">👥</span>
+                        <span>Connect with the community</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📚</span>
+                        <span>Access exclusive resources</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📅</span>
+                        <span>Join events and workshops</span>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-required-actions">
+                <a href="./auth.html" class="cta-button primary large">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In / Create Account
+                </a>
+                <a href="../index.html" class="cta-button secondary">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+            <div class="auth-quick-social" style="margin-top: 20px;">
+                <p style="margin-bottom: 12px; color: #666;">Quick Access:</p>
+                <div class="social-login-buttons">
+                    <button type="button" class="social-button google-login" onclick="handleQuickGoogleLogin()">
+                        <span class="social-icon">G</span>
+                        Google
+                    </button>
+                    <button type="button" class="social-button facebook-login" onclick="handleQuickFacebookLogin()">
+                        <span class="social-icon">f</span>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-content">
+            <!-- Main Navigation -->
+            <div class="nav-section">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <div class="nav-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <span class="nav-text">Dashboard</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#chat" class="nav-link" data-section="chat">
+                            <div class="nav-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span class="nav-text">Community Chat</span>
+                            <span class="nav-badge">5</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#connections" class="nav-link" data-section="connections">
+                            <div class="nav-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span class="nav-text">My Network</span>
+                            <span class="nav-badge">12</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#events" class="nav-link" data-section="events">
+                            <div class="nav-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <span class="nav-text">Events</span>
+                            <span class="nav-badge new">3</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resources" class="nav-link" data-section="resources">
+                            <div class="nav-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span class="nav-text">Resources</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link" data-section="profile">
+                            <div class="nav-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="nav-text">My Profile</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Admin Section (hidden by default, shown for admin users) -->
+            <div id="admin-section" class="nav-section admin-section" style="display: none;">
+                <div class="nav-section-header">
+                    <span class="section-title">Administration</span>
+                    <span class="section-badge">Admin</span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#admin-dashboard" class="nav-link" data-section="admin-dashboard">
+                            <div class="nav-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <span class="nav-text">Admin Dashboard</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#member-management" class="nav-link" data-section="member-management">
+                            <div class="nav-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <span class="nav-text">Member Management</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#event-management" class="nav-link" data-section="event-management">
+                            <div class="nav-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <span class="nav-text">Event Management</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link" data-section="analytics">
+                            <div class="nav-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="nav-text">Analytics</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#content-curation" class="nav-link" data-section="content-curation">
+                            <div class="nav-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <span class="nav-text">Content Curation</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="footer-info">
+                <p class="copyright">© 2024 AFZ</p>
+                <p class="version">v2.1.0</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="#dashboard">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+
+        <!-- Content Sections -->
+        <!-- Dashboard Section -->
+        <section id="section-dashboard" class="content-section active">
+            <div class="section-header">
+                <div class="header-content">
+                    <h1 class="section-title">Welcome back, <span class="user-name">John</span>!</h1>
+                    <p class="section-subtitle">Here's what's happening in your AFZ community</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Quick Action
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Dashboard Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card interactive" data-stat="members">
+                    <div class="stat-header">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="1248">1,248</h3>
+                        <p class="stat-label">Community Members</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="78"></div>
+                            </div>
+                            <span class="progress-text">78% to goal</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+12">
+                            <i class="fas fa-arrow-up"></i> +12% this month
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="members"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="events">
+                    <div class="stat-header">
+                        <div class="stat-icon success">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="23">23</h3>
+                        <p class="stat-label">Events This Month</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar success">
+                                <div class="progress-fill" data-progress="92"></div>
+                            </div>
+                            <span class="progress-text">23 of 25 planned</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+5">
+                            <i class="fas fa-arrow-up"></i> +5 new events
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="events"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="resources">
+                    <div class="stat-header">
+                        <div class="stat-icon info">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-pie-chart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="847">847</h3>
+                        <p class="stat-label">Resources Available</p>
+                        <div class="stat-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-color medical"></span>
+                                <span class="breakdown-text">Medical: 312</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-color education"></span>
+                                <span class="breakdown-text">Education: 285</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-color legal"></span>
+                                <span class="breakdown-text">Legal: 250</span>
+                            </div>
+                        </div>
+                        <span class="stat-change positive" data-change="+23">
+                            <i class="fas fa-arrow-up"></i> +23 this week
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="resources"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="donations">
+                    <div class="stat-header">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-area"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="15420">K15,420</h3>
+                        <p class="stat-label">Donations Raised</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar warning">
+                                <div class="progress-fill" data-progress="61"></div>
+                            </div>
+                            <span class="progress-text">61% of K25,000 goal</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+8">
+                            <i class="fas fa-arrow-up"></i> +8% this quarter
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="donations"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions-section">
+                <h2 class="section-subtitle">Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('resources')">
+                        <div class="action-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Browse Resources</h4>
+                            <p>Access educational materials and guides</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('events')">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Join Events</h4>
+                            <p>Find and register for upcoming activities</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('connections')">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Connect</h4>
+                            <p>Expand your professional network</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('chat')">
+                        <div class="action-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Community Chat</h4>
+                            <p>Join ongoing conversations</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-widgets">
+                <div class="widget activity-widget">
+                    <div class="widget-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="widget-link">View All</a>
+                    </div>
+                    <div class="widget-content">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="../images/avatars/user1.jpg" alt="Sarah M.">
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Sarah M.</strong> shared a new resource</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <div class="avatar-placeholder">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New event: <strong>Awareness Workshop</strong></p>
+                                    <span class="activity-time">4 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="../images/avatars/user2.jpg" alt="Michael J.">
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Michael J.</strong> joined the community</p>
+                                    <span class="activity-time">Yesterday</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget upcoming-widget">
+                    <div class="widget-header">
+                        <h3>Upcoming Events</h3>
+                        <a href="#events" class="widget-link" onclick="afzMemberHub.switchSection('events')">View Calendar</a>
+                    </div>
+                    <div class="widget-content">
+                        <div class="event-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">24</span>
+                                    <span class="month">AUG</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Albinism Awareness Workshop</h4>
+                                    <p>Lusaka Community Center • 2:00 PM</p>
+                                    <span class="event-status registered">Registered</span>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">30</span>
+                                    <span class="month">AUG</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Healthcare Access Forum</h4>
+                                    <p>Virtual Event • 10:00 AM</p>
+                                    <button class="btn btn-sm btn-primary">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="section-chat" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Community Chat</h1>
+                <p class="section-subtitle">Connect and communicate with fellow community members</p>
+            </div>
+            <!-- Chat content will be populated by ChatManager -->
+        </section>
+
+        <!-- Connections Section -->
+        <section id="section-connections" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">My Network</h1>
+                <p class="section-subtitle">Build meaningful connections within the AFZ community</p>
+            </div>
+            <!-- Connections content will be populated by ConnectionsManager -->
+        </section>
+
+        <!-- Events Section -->
+        <section id="section-events" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Events</h1>
+                <p class="section-subtitle">Discover and participate in community events and workshops</p>
+            </div>
+            <!-- Events content will be populated by EventsManager -->
+        </section>
+
+        <!-- Resources Section -->
+        <section id="section-resources" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Resource Library</h1>
+                <p class="section-subtitle">Access comprehensive educational materials and guides</p>
+            </div>
+            <!-- Resources content will be populated by ResourcesManager -->
+        </section>
+
+        <!-- Profile Section -->
+        <section id="section-profile" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">My Profile</h1>
+                <p class="section-subtitle">Manage your account information and preferences</p>
+            </div>
+            <!-- Profile content will be populated by ProfileManager -->
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="section-admin-dashboard" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Admin Dashboard</h1>
+                <p class="section-subtitle">Administrative tools and system overview</p>
+            </div>
+            <!-- Admin content will be populated by AdminManager -->
+        </section>
+
+        <!-- Member Management Section -->
+        <section id="section-member-management" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Event Management Section -->
+        <section id="section-event-management" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="section-analytics" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Content Curation Section -->
+        <section id="section-content-curation" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-translate="footer_sections.about.title">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text" data-translate="footer_sections.about.description">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" data-translate="social.facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" data-translate="social.twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" data-translate="social.linkedin" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" data-translate="social.youtube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.quick_links.title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" class="footer-link" data-translate="nav-home">Home</a></li>
+                        <li><a href="./about.html" class="footer-link" data-translate="nav-about">About Us</a></li>
+                        <li><a href="./programs.html" class="footer-link" data-translate="nav-programs">Programs</a></li>
+                        <li><a href="./advocacy.html" class="footer-link" data-translate="nav-advocacy">Advocacy</a></li>
+                        <li><a href="./events.html" class="footer-link" data-translate="nav-events">Events</a></li>
+                        <li><a href="./contact.html" class="footer-link" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.contact.title">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><strong data-translate="contact.email_label">Email:</strong> afz.zambia@gmail.com</p>
+                        <p><strong data-translate="contact.phone_label">Phone:</strong> +260 97 7977026</p>
+                        <p><strong data-translate="contact.address_label">Address:</strong> AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.support.title">Support Our Cause</h4>
+                    <p class="footer-text" data-translate="footer_sections.support.description">
+                        Help us advocate for persons with albinism in Zambia.
+                    </p>
+                    <a href="./donate.html" class="cta-button primary" data-translate="footer_sections.support.donate">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    <span data-translate="footer_sections.copyright">&copy; 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
+                </p>
+                <div class="footer-legal">
+                    <a href="#" data-translate="footer_sections.privacy">Privacy Policy</a>
+                    <a href="#" data-translate="footer_sections.terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabaseClient.js?v=20250828"></script>
+    <script src="../js/services/auth-service.js?v=20250828"></script>
+    <script src="../js/member-hub-auth-guard.js?v=20250906"></script>
+    <script src="../js/main.js?v=20250828"></script>
+    <script src="../js/supabaseProfile.js?v=20250828"></script>
+    <script src="../js/language.js?v=20250828"></script>
+    <script src="../js/navigation.js?v=20250828"></script>
+    <script src="../js/member-hub.js?v=20250828"></script>
+    <script src="../js/pwa.js?v=20250828"></script>
+    
+    <!-- Service Scripts -->
+    <script src="../js/services/notification-service.js?v=20250906"></script>
+    
+    <!-- Module Scripts -->
+    <script src="../js/components/chat-manager.js?v=20250906"></script>
+    <script src="../js/components/resources-manager.js?v=20250906"></script>
+    <script src="../js/components/notifications-manager.js?v=20250906"></script>
+    <script src="../js/components/admin-dashboard-manager.js?v=20250906"></script>
+    <script src="../js/models/profile.js?v=20250828"></script>
+    <script src="../js/models/admin.js?v=20250828"></script>
+    <script src="../js/models/connections.js?v=20250828"></script>
+    <script src="../js/models/events-real.js?v=20250828"></script>
+    
+    <!-- Quick Social Login Functions -->
+    <script>
+        async function handleQuickGoogleLogin() {
+            if (window.afzAuthService) {
+                try {
+                    const result = await window.afzAuthService.signInWithGoogle();
+                    if (result.success) {
+                        // Authentication will redirect automatically via auth state change
+                        console.log('Google authentication initiated');
+                    } else {
+                        alert('Google sign in failed: ' + result.error);
+                    }
+                } catch (error) {
+                    console.error('Google sign in error:', error);
+                    alert('Google sign in failed. Please try again.');
+                }
+            } else {
+                alert('Authentication service not ready. Please try again in a moment.');
+            }
+        }
+
+        async function handleQuickFacebookLogin() {
+            if (window.afzAuthService) {
+                try {
+                    const result = await window.afzAuthService.signInWithFacebook();
+                    if (result.success) {
+                        // Authentication will redirect automatically via auth state change
+                        console.log('Facebook authentication initiated');
+                    } else {
+                        alert('Facebook sign in failed: ' + result.error);
+                    }
+                } catch (error) {
+                    console.error('Facebook sign in error:', error);
+                    alert('Facebook sign in failed. Please try again.');
+                }
+            } else {
+                alert('Authentication service not ready. Please try again in a moment.');
+            }
+        }
+    </script>
+
+    <!-- Initialize Modules -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all modules after dashboard is ready and user is authenticated
+            setTimeout(() => {
+                // Only initialize if user is authenticated
+                if (window.afzAuthService && window.afzAuthService.isAuthenticated) {
+                    // Initialize modules
+                    window.chatManager = new ChatManager();
+                    window.resourcesManager = new ResourcesManager();
+                    window.notificationsManager = new NotificationsManager();
+                    window.adminDashboardManager = new AdminDashboardManager();
+                    window.profileManager = new ProfileManager();
+                    window.adminManager = new AdminManager();
+                    window.connectionsManager = new ConnectionsManager();
+                    window.eventsManager = new EventsManager();
+                    
+                    // Set up module switching in member hub
+                    const originalSwitchSection = window.afzMemberHub.switchSection;
+                    window.afzMemberHub.switchSection = function(sectionName) {
+                        originalSwitchSection.call(this, sectionName);
+                        
+                        // Initialize specific modules when their sections are loaded
+                        switch(sectionName) {
+                            case 'chat':
+                                if (window.chatManager) window.chatManager.init();
+                                break;
+                            case 'connections':
+                                if (window.connectionsManager) window.connectionsManager.init();
+                                break;
+                            case 'events':
+                                if (window.eventsManager) window.eventsManager.init();
+                                break;
+                            case 'resources':
+                                if (window.resourcesManager) {
+                                    // Resources manager auto-initializes, just ensure it's ready
+                                    if (!window.resourcesManager.isInitialized) {
+                                        window.resourcesManager.init();
+                                    }
+                                }
+                                break;
+                            case 'profile':
+                                if (window.profileManager) window.profileManager.init();
+                                break;
+                            case 'admin-dashboard':
+                                if (window.adminDashboardManager && window.adminDashboardManager.isInitialized) {
+                                    // Admin dashboard is self-managing
+                                } else if (window.adminManager) {
+                                    window.adminManager.switchAdminSection(sectionName);
+                                }
+                                break;
+                            case 'member-management':
+                            case 'event-management':
+                            case 'analytics':
+                            case 'content-curation':
+                                if (window.adminManager) window.adminManager.switchAdminSection(sectionName);
+                                break;
+                        }
+                    };
+                    
+                    console.log('AFZ Member Hub modules initialized successfully');
+                }
+            }, 2000);
+        });
+    </script>
+
+    <!-- Screen reader announcements -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* AFZ Authentication Form Enhancements */
+
+/* Loading spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ffffff33;
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form states */
+.auth-form input.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.25);
+}
+
+/* Error messages */
+.error-message {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.error-message:not(:empty) {
+    display: block;
+}
+
+/* Global messages */
+.auth-message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.auth-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.auth-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message-icon {
+    font-size: 1.25rem;
+}
+
+/* Password requirements */
+.password-requirements {
+    margin: 0.5rem 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.password-requirements li {
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.password-requirements li::before {
+    content: '○';
+    position: absolute;
+    left: 0;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.password-requirements li.met::before {
+    content: '●';
+    color: #28a745;
+}
+
+/* Email confirmation notice */
+.email-confirmation-notice {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.email-confirmation-notice h4 {
+    margin: 0 0 1rem 0;
+    color: #1976d2;
+}
+
+.email-confirmation-notice p {
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.btn-close {
+    background: #2196f3;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn-close:hover {
+    background: #1976d2;
+}
+
+/* Form disabled state */
+.auth-form:has(input:disabled) {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Social login loading states */
+.social-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus management */
+.auth-panel input:first-of-type {
+    /* Ensure first input gets focus */
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .auth-form input.error {
+        border-color: #ff0000;
+        border-width: 3px;
+    }
+    
+    .error-message {
+        color: #cc0000;
+        font-weight: bold;
+    }
+    
+    .auth-message.error {
+        background-color: #ffcccc;
+        color: #990000;
+        border-color: #cc0000;
+    }
+    
+    .auth-message.success {
+        background-color: #ccffcc;
+        color: #006600;
+        border-color: #00cc00;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .auth-message {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .loading-spinner {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .email-confirmation-notice {
+        padding: 1rem;
+    }
+}
+
+/* Animation for error states */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+    20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.auth-form input.error {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Form validation feedback */
+.form-group.valid input {
+    border-color: #28a745;
+}
+
+.form-group.valid input:focus {
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+}
+
+/* Password strength indicator */
+.password-strength {
+    margin-top: 0.5rem;
+    height: 4px;
+    background: #e9ecef;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 2px;
+}
+
+.password-strength-bar.weak {
+    background: #dc3545;
+    width: 25%;
+}
+
+.password-strength-bar.fair {
+    background: #fd7e14;
+    width: 50%;
+}
+
+.password-strength-bar.good {
+    background: #ffc107;
+    width: 75%;
+}
+
+.password-strength-bar.strong {
+    background: #28a745;
+    width: 100%;
+}
+
+/* Smooth transitions */
+.auth-panel,
+.auth-tab,
+.form-group,
+.auth-button {
+    transition: all 0.2s ease;
+}
+
+/* Focus ring for better accessibility */
+.auth-tab:focus,
+.auth-button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #2b6cb0;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .auth-forms-container {
+        display: none;
+    }
+    
+    .auth-welcome {
+        page-break-inside: avoid;
+    }
+}

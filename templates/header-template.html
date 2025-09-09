@@ -1,0 +1,112 @@
+<style>
+    /* Base text styling for consistent readability */
+    body {
+        font-family: var(--font-primary);
+        color: var(--afz-black);
+        background-color: var(--afz-white);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Navigation container for wrapping */
+    .nav-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    /* Enhanced Navigation Button Styles */
+    .nav-link {
+        color: #000000 !important;
+        font-weight: 600;
+        padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.25rem);
+        border-radius: 30px;
+        border: 2px solid #000000 !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+        background: #FFFFFF !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 110px;
+        min-height: 44px;
+        text-align: center;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .nav-link:hover {
+        background: #000000 !important;
+        color: #FFFFFF !important;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: var(--afz-black);
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 70%;
+    }
+
+    .nav-link.active {
+        background: #000000 !important;
+        color: #FFFFFF !important;
+    }
+
+    /* Site Header */
+    .site-header {
+        background: #000000 !important;
+        color: #FFFFFF !important;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 1rem 2rem;
+    }
+
+    /* Organization name and tagline */
+    .org-name {
+        color: #FFFFFF !important;
+        font-weight: 700;
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .org-tagline {
+        color: #DAA520 !important;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+
+    /* Responsive tweaks for smaller screens */
+    @media (max-width: 768px) {
+        .nav-link {
+            min-width: 90px;
+        }
+
+        .site-header {
+            padding: 0.75rem 1rem;
+        }
+
+        .nav-container {
+            gap: 0.25rem;
+        }
+    }
+</style>

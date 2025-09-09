@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFZ - You are currently offline">
+    <title>Offline - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <style>
+        :root {
+            --primary-blue: #2b6cb0;
+            --secondary-orange: #ed8936;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-orange) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .offline-container {
+            text-align: center;
+            max-width: 500px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .offline-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .offline-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .offline-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
+        .offline-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .action-button {
+            padding: 0.875rem 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .action-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .action-button.primary {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .connection-status {
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .connection-status.offline {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .connection-status.online {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+        
+        .tips-section {
+            margin-top: 2rem;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+        
+        .tips-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tips-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .tips-list li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .offline-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .offline-title {
+                font-size: 2rem;
+            }
+            
+            .offline-description {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📱📶</div>
+        
+        <h1 class="offline-title">You're Offline</h1>
+        
+        <p class="offline-description">
+            It looks like you've lost your internet connection. Some features of the AFZ website 
+            are available offline, or you can try these options:
+        </p>
+        
+        <div class="offline-actions">
+            <button class="action-button primary" onclick="window.location.reload()">
+                🔄 Try Again
+            </button>
+            
+            <a href="../index.html" class="action-button">
+                🏠 Go to Homepage
+            </a>
+            
+            <a href="../pages/contact.html" class="action-button">
+                📞 Contact Information
+            </a>
+        </div>
+        
+        <div id="connectionStatus" class="connection-status offline">
+            ❌ <strong>Status:</strong> Offline - Please check your internet connection
+        </div>
+        
+        <div class="tips-section">
+            <h3 class="tips-title">While You're Offline</h3>
+            <ul class="tips-list">
+                <li>You can still view previously loaded pages</li>
+                <li>Your form submissions will be saved and sent when you're back online</li>
+                <li>Check your network connection or try switching to mobile data</li>
+                <li>Some content may be available from your browser cache</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Monitor online/offline status
+        function updateConnectionStatus() {
+            const statusElement = document.getElementById('connectionStatus');
+            const isOnline = navigator.onLine;
+            
+            if (isOnline) {
+                statusElement.className = 'connection-status online';
+                statusElement.innerHTML = '✅ <strong>Status:</strong> Back online! You can now reload the page.';
+                
+                // Show reload notification
+                setTimeout(() => {
+                    if (confirm('You\\'re back online! Would you like to reload the page?')) {
+                        window.location.reload();
+                    }
+                }, 1000);
+            } else {
+                statusElement.className = 'connection-status offline';
+                statusElement.innerHTML = '❌ <strong>Status:</strong> Offline - Please check your internet connection';
+            }
+        }
+        
+        // Initial status check
+        updateConnectionStatus();
+        
+        // Listen for online/offline events
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+        
+        // Auto-retry connection every 30 seconds
+        setInterval(() => {
+            if (navigator.onLine) {
+                updateConnectionStatus();
+            }
+        }, 30000);
+        
+        // Simple analytics for offline page visits
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.ready.then(registration => {
+                // Log offline page visit
+                console.log('[Offline] Page loaded, service worker available');
+            });
+        }
+    </script>
+</body>
+</html>
