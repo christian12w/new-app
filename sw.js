@@ -188,8 +188,62 @@ async function networkFirstWithOffline(request, cacheName) {
     try {
         return await networkFirst(request, cacheName);
     } catch (error) {
-        // Return offline page for navigation requests
+        // For navigation requests to member hub, we need to be careful about redirecting
         if (request.mode === 'navigate') {
+            const url = new URL(request.url);
+            
+            // If trying to access member hub while offline, show a more appropriate error
+            if (url.pathname.includes('member-hub.html')) {
+                // Try to return a cached version if available
+                const cache = await caches.open(cacheName);
+                const cachedResponse = await cache.match(request);
+                if (cachedResponse) {
+                    return cachedResponse;
+                }
+                
+                // If no cached version, create a simple offline response for member hub
+                return new Response(`
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <title>AFZ Member Hub - Offline</title>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <style>
+                            body { 
+                                font-family: Arial, sans-serif; 
+                                text-align: center; 
+                                padding: 2rem; 
+                                background: #f3f4f6;
+                            }
+                            .offline-message { 
+                                background: white; 
+                                padding: 2rem; 
+                                border-radius: 8px; 
+                                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                                max-width: 500px;
+                                margin: 0 auto;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="offline-message">
+                            <h2>🌐 Member Hub Unavailable Offline</h2>
+                            <p>The AFZ Member Hub requires an internet connection to access your account and personalized content.</p>
+                            <p>Please check your connection and try again.</p>
+                            <button onclick="window.location.reload()" style="padding: 0.75rem 1.5rem; background: #2b6cb0; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                🔄 Reload Page
+                            </button>
+                        </div>
+                    </body>
+                    </html>
+                `, {
+                    status: 200,
+                    headers: { 'Content-Type': 'text/html' }
+                });
+            }
+            
+            // For other pages, return offline page
             const cache = await caches.open(cacheName);
             const offlinePage = await cache.match('./pages/offline.html');
             if (offlinePage) {

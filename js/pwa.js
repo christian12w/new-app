@@ -331,6 +331,19 @@ class AFZPWAManager {
     // Check connection with network request
     async checkConnection() {
         try {
+            // If we're on auth or member hub pages, be more careful about redirecting
+            const isAuthPage = window.location.pathname.includes('auth.html');
+            const isMemberHubPage = window.location.pathname.includes('member-hub.html');
+            
+            if (isAuthPage || isMemberHubPage) {
+                // For authentication pages, do a simpler check
+                const online = navigator.onLine;
+                if (!online) {
+                    this.isOnline = false;
+                    return false;
+                }
+            }
+            
             const manifestUrl = new URL('manifest.json', window.location.href).toString();
             const response = await fetch(manifestUrl, { 
                 method: 'HEAD', 
@@ -339,6 +352,8 @@ class AFZPWAManager {
             
             if (response.ok) {
                 this.isOnline = true;
+            } else {
+                this.isOnline = false;
             }
         } catch (error) {
             this.isOnline = false;
@@ -349,6 +364,15 @@ class AFZPWAManager {
     
     // Show connection status
     showConnectionStatus(status) {
+        // Don't show connection status on auth or member hub pages to avoid conflicts
+        const isAuthPage = window.location.pathname.includes('auth.html');
+        const isMemberHubPage = window.location.pathname.includes('member-hub.html');
+        
+        if (isAuthPage || isMemberHubPage) {
+            console.log(`[PWA] Connection status: ${status} (not showing notification on auth/member pages)`);
+            return;
+        }
+        
         // Remove existing status notifications
         const existingStatus = document.querySelector('.connection-status-notification');
         if (existingStatus) {

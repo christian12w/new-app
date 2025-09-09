@@ -228,8 +228,16 @@
                 
                 // Show reload notification
                 setTimeout(() => {
-                    if (confirm('You\\'re back online! Would you like to reload the page?')) {
-                        window.location.reload();
+                    // Check if we're on a page that should redirect after coming online
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('offline.html')) {
+                        // If we're on the offline page, redirect to home
+                        window.location.href = '../index.html';
+                    } else {
+                        // For other pages, just reload
+                        if (confirm('You\'re back online! Would you like to reload the page?')) {
+                            window.location.reload();
+                        }
                     }
                 }, 1000);
             } else {

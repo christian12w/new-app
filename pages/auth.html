@@ -97,6 +97,11 @@
         <div class="auth-container">
             <!-- Welcome Section -->
             <section class="auth-welcome" aria-labelledby="welcome-heading">
+                <div id="offline-warning" style="display: none; background: #fef3c7; color: #92400e; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid #fcd34d;">
+                    <strong>⚠️ You're currently offline</strong>
+                    <p>Some authentication features require an internet connection. Please check your connection and try again.</p>
+                </div>
+                
                 <h2 id="welcome-heading" class="welcome-title" data-translate="auth-welcome-title">Join Our AFZ Community</h2>
                 <p class="welcome-description" data-translate="auth-welcome-desc">
                     Become a member to access personalized resources, connect with fellow advocates, participate in impactful events, and track your journey in our albinism advocacy efforts across Zambia.
@@ -397,6 +402,29 @@
     <script src="../js/language.js?v=20250828"></script>
     <script src="../js/navigation.js?v=20250828"></script>
     <script src="../js/pwa.js?v=20250828"></script>
+    
+    <script>
+        // Show offline warning if user is offline
+        function updateOfflineStatus() {
+            const offlineWarning = document.getElementById('offline-warning');
+            if (offlineWarning) {
+                if (navigator.onLine) {
+                    offlineWarning.style.display = 'none';
+                } else {
+                    offlineWarning.style.display = 'block';
+                }
+            }
+        }
+        
+        // Check initial status
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOfflineStatus();
+        });
+        
+        // Listen for online/offline events
+        window.addEventListener('online', updateOfflineStatus);
+        window.addEventListener('offline', updateOfflineStatus);
+    </script>
     
     <!-- Screen reader announcements -->
     <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>

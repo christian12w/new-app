@@ -137,6 +137,14 @@
                 return;
             }
 
+            // Check if we're offline - if so, show a special offline message instead of auth screen
+            if (!navigator.onLine) {
+                console.log('🚫 User is offline - showing offline state instead of redirecting');
+                showOfflineState();
+                authCheckComplete = true;
+                return;
+            }
+
             // Check current session
             const user = await window.afzAuthService.getCurrentUser();
             
@@ -166,6 +174,12 @@
         if (window.afzAuthService) {
             window.afzAuthService.onAuthStateChange((event, user) => {
                 console.log('🔄 Auth state changed:', event, user?.email);
+                
+                // Check if we're offline - if so, don't process auth state changes
+                if (!navigator.onLine) {
+                    console.log('🚫 User is offline - not processing auth state changes');
+                    return;
+                }
                 
                 switch (event) {
                     case 'SIGNED_IN':
@@ -222,6 +236,38 @@
                 }
             }
         });
+    }
+
+    function showOfflineState() {
+        // Hide all screens
+        if (loadingScreen) loadingScreen.style.display = 'none';
+        if (authRequiredScreen) authRequiredScreen.style.display = 'none';
+        if (mainContent) mainContent.style.display = 'none';
+        if (sidebar) sidebar.style.display = 'none';
+        if (header) header.style.display = 'none';
+        
+        // Show a simple offline message
+        document.body.setAttribute('data-auth-status', 'offline');
+        
+        // Create offline message if it doesn't exist
+        let offlineMessage = document.getElementById('offline-message');
+        if (!offlineMessage) {
+            offlineMessage = document.createElement('div');
+            offlineMessage.id = 'offline-message';
+            offlineMessage.innerHTML = `
+                <div style="text-align: center; padding: 2rem; background: #f3f4f6; border-radius: 8px; margin: 2rem;">
+                    <h2>🌐 You're Offline</h2>
+                    <p>Some features require an internet connection. Please check your connection and try again.</p>
+                    <button onclick="window.location.reload()" style="padding: 0.5rem 1rem; background: #2b6cb0; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                        🔄 Reload Page
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(offlineMessage);
+        }
+        offlineMessage.style.display = 'block';
+        
+        console.log('📱 Showing offline state instead of authentication screens');
     }
 
     function init() {

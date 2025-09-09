@@ -38,6 +38,12 @@ class AFZRedirectManager {
     }
 
     performRedirect() {
+        // Check if we're offline - if so, don't redirect to prevent loops
+        if (!navigator.onLine) {
+            console.log('User is offline - not performing redirect to prevent loops');
+            return;
+        }
+        
         // Get stored redirect URL
         const redirectUrl = sessionStorage.getItem('afz_redirect_after_login');
         

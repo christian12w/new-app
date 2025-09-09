@@ -430,6 +430,18 @@ class AFZAuthenticationService {
 
     requireAuth() {
         if (!this.isAuthenticated) {
+            // Check if we're offline before redirecting
+            if (!navigator.onLine) {
+                // If offline, don't redirect to auth page as it might cause loops
+                console.log('User not authenticated but offline - not redirecting to auth');
+                return false;
+            }
+            
+            // Store current URL for redirect after login, but only if not already on auth page
+            if (!window.location.pathname.includes('auth.html')) {
+                AFZRedirectManager.setRedirectUrl();
+            }
+            
             window.location.href = './auth.html';
             return false;
         }
