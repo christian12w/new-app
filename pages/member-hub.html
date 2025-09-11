@@ -65,7 +65,67 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <!--#include file="../templates/header-template.html" -->
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading AFZ Member Hub...</p>
+        </div>
+    </div>
+    
+    <!--#include file="../templates/member-hub-header-template.html" -->
+
+    <!-- Notification Panel -->
+    <div id="notification-panel" class="notification-panel">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <div class="notification-actions">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="unread">Unread</button>
+                <button class="mark-read-btn" id="mark-all-read" title="Mark all as read">
+                    <i class="fas fa-check-double"></i>
+                </button>
+            </div>
+        </div>
+        <div class="notification-list" id="notification-list">
+            <!-- Notifications will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- User Menu Dropdown -->
+    <div id="user-menu-dropdown" class="user-menu-dropdown">
+        <div class="user-menu-header">
+            <div class="user-info">
+                <div class="user-avatar-large">
+                    <span class="avatar-text">U</span>
+                </div>
+                <div class="user-details">
+                    <h4 class="user-name">User Name</h4>
+                    <p class="user-email">user@example.com</p>
+                    <span class="user-role">Member</span>
+                </div>
+            </div>
+        </div>
+        <nav class="user-menu-nav">
+            <a href="#profile" class="user-menu-item" data-section="profile">
+                <i class="fas fa-user"></i>
+                <span>My Profile</span>
+            </a>
+            <a href="#settings" class="user-menu-item" data-section="settings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+            <a href="#help" class="user-menu-item" data-section="help">
+                <i class="fas fa-question-circle"></i>
+                <span>Help & Support</span>
+            </a>
+            <div class="user-menu-divider"></div>
+            <button class="user-menu-item" data-action="logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sign Out</span>
+            </button>
+        </nav>
+    </div>
 
     <!-- Authentication Required Screen -->
     <div id="auth-required-screen" class="auth-required-screen" style="display: none;">
@@ -720,7 +780,7 @@
     <script src="../js/models/admin.js?v=20250828"></script>
     <script src="../js/models/connections.js?v=20250828"></script>
     <script src="../js/models/events-real.js?v=20250828"></script>
-    
+    <script src="../js/models/events.js?v=20250828"></script>
     <!-- Quick Social Login Functions -->
     <script>
         async function handleQuickGoogleLogin() {
