@@ -65,39 +65,7 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
-    <!-- Header -->
-    <header class="site-header" role="banner">
-        <div class="header-container">
-            <div class="logo-section">
-                <img src="../favicon.jpg" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
-                <div class="organization-info">
-                    <h1 class="org-name" data-translate="org-name">AFZ Member Hub</h1>
-                    <p class="org-tagline" data-translate="org-tagline">Connect, Learn, Advocate</p>
-                </div>
-            </div>
-            
-            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
-                <span class="sr-only" data-translate="accessibility.toggle_navigation">Toggle navigation</span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            
-            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
-                    <li><a href="./about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
-                    <li><a href="./programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
-                    <li><a href="./resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
-                    <li><a href="./advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
-                    <li><a href="./events.html" class="nav-link" data-translate="nav-events">Events</a></li>
-                    <li><a href="./contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
-                    <li><a href="./member-hub.html" class="nav-link active" data-translate="nav-member-portal">Member Hub</a></li>
-                    <li><a href="./donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!--#include file="../templates/header-template.html" -->
 
     <!-- Authentication Required Screen -->
     <div id="auth-required-screen" class="auth-required-screen" style="display: none;">
@@ -496,7 +464,7 @@
                 </div>
             </div>
 
-            <!-- Recent Activity -->
+            <!-- Recent Activity and Upcoming Events -->
             <div class="dashboard-widgets">
                 <div class="widget activity-widget">
                     <div class="widget-header">

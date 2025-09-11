@@ -144,7 +144,7 @@ class AFZMemberHub {
     }
 
     animatePageEntrance() {
-        // Animate statistics cards
+        // Animate statistics cards with staggered delay
         const statCards = document.querySelectorAll('.stat-card');
         statCards.forEach((card, index) => {
             setTimeout(() => {
@@ -159,7 +159,7 @@ class AFZMemberHub {
             }, index * 100);
         });
 
-        // Animate quick action cards
+        // Animate quick action cards with staggered delay
         const actionCards = document.querySelectorAll('.quick-action-card');
         actionCards.forEach((card, index) => {
             setTimeout(() => {
@@ -172,6 +172,21 @@ class AFZMemberHub {
                     card.style.transform = 'translateY(0) scale(1)';
                 });
             }, 200 + (index * 80));
+        });
+
+        // Animate widgets
+        const widgets = document.querySelectorAll('.widget');
+        widgets.forEach((widget, index) => {
+            setTimeout(() => {
+                widget.style.opacity = '0';
+                widget.style.transform = 'translateY(20px)';
+                widget.style.transition = 'all 0.5s ease-out';
+                
+                requestAnimationFrame(() => {
+                    widget.style.opacity = '1';
+                    widget.style.transform = 'translateY(0)';
+                });
+            }, 400 + (index * 100));
         });
 
         // Animate number counters
@@ -1180,15 +1195,20 @@ class AFZMemberHub {
     }
     
     async requestNotificationPermission() {
-        if ('Notification' in window) {
-            if (Notification.permission === 'default') {
-                await Notification.requestPermission();
+        try {
+            if ('Notification' in window) {
+                if (Notification.permission === 'default') {
+                    await Notification.requestPermission();
+                }
             }
+        } catch (error) {
+            console.error('Error requesting notification permission:', error);
+            // Silently fail as this is not critical functionality
         }
     }
     
     bindNotificationEvents() {
-        const notificationBtn = document.getElementById('notification-btn');
+        const notificationBtn = document.getElementById('notifications-btn');
         const notificationPanel = document.getElementById('notification-panel');
         const markAllReadBtn = document.querySelector('.mark-read-btn');
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -2141,11 +2161,16 @@ class AFZMemberHub {
     }
     
     async setupRealtimeSubscriptions() {
-        if (this.currentUser) {
-            // Subscribe to real-time notifications
-            this.db.subscribeToNotifications((payload) => {
-                this.handleNewNotification(payload.new);
-            });
+        try {
+            if (this.currentUser) {
+                // Subscribe to real-time notifications
+                this.db.subscribeToNotifications((payload) => {
+                    this.handleNewNotification(payload.new);
+                });
+            }
+        } catch (error) {
+            console.error('Error setting up real-time subscriptions:', error);
+            this.showToastNotification('Failed to set up real-time notifications', 'error');
         }
     }
     
@@ -3047,6 +3072,21 @@ class AFZMemberHub {
         this.renderConnections();
         this.renderConnectionRequests();
         this.renderMemberDirectory();
+    }
+    
+    /**
+     * Show a specific section in the member hub
+     * @param {string} sectionName - The name of the section to show
+     */
+    showSection(sectionName) {
+        // Validate section name
+        if (!sectionName) {
+            console.warn('No section name provided to showSection');
+            return;
+        }
+        
+        // Use existing switchSection method to handle navigation
+        this.switchSection(sectionName);
     }
 }
 

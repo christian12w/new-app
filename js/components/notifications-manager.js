@@ -141,25 +141,57 @@ class NotificationsManager {
         return this.notifications.map(notification => this.renderNotificationItem(notification)).join('');
     }
 
+    /**
+     * Sanitize HTML to prevent XSS attacks
+     * @param {string} str - The string to sanitize
+     * @returns {string} - The sanitized string
+     */
+    sanitizeHTML(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+    
+    /**
+     * Escape HTML attributes to prevent XSS attacks
+     * @param {string} str - The string to escape
+     * @returns {string} - The escaped string
+     */
+    escapeHTMLAttribute(str) {
+        if (!str) return '';
+        return str.replace(/"/g, '&quot;')
+                 .replace(/'/g, '&#39;')
+                 .replace(/</g, '&lt;')
+                 .replace(/>/g, '&gt;')
+                 .replace(/&/g, '&amp;');
+    }
+    
     renderNotificationItem(notification) {
         const typeConfig = this.notificationTypes[notification.notification_type] || this.notificationTypes.system;
         const isUnread = !notification.read_at;
         const timeAgo = this.formatTimeAgo(notification.created_at);
         
+        // Sanitize all user-provided data
+        const sanitizedTitle = this.sanitizeHTML(notification.title);
+        const sanitizedMessage = this.sanitizeHTML(notification.message);
+        const sanitizedId = this.escapeHTMLAttribute(notification.id);
+        const sanitizedActionUrl = notification.action_url ? this.escapeHTMLAttribute(notification.action_url) : null;
+        
         return `
-            <div class="notification-item ${isUnread ? 'unread' : 'read'}" data-notification-id="${notification.id}">
+            <div class="notification-item ${isUnread ? 'unread' : 'read'}" data-notification-id="${sanitizedId}">
                 <div class="notification-icon" style="color: ${typeConfig.color}">
                     <i class="fas ${typeConfig.icon}"></i>
                 </div>
                 <div class="notification-content">
                     <div class="notification-header">
-                        <h4 class="notification-title">${notification.title}</h4>
+                        <h4 class="notification-title">${sanitizedTitle}</h4>
                         <span class="notification-time">${timeAgo}</span>
                     </div>
-                    <p class="notification-message">${notification.message}</p>
-                    ${notification.action_url ? `
+                    <p class="notification-message">${sanitizedMessage}</p>
+                    ${sanitizedActionUrl ? `
                         <div class="notification-actions">
-                            <button class="notification-action-btn" onclick="notificationsManager.handleNotificationAction('${notification.id}', '${notification.action_url}')">
+                            <button class="notification-action-btn" onclick="notificationsManager.handleNotificationAction('${sanitizedId}', '${sanitizedActionUrl}')">
                                 View Details
                             </button>
                         </div>
@@ -167,11 +199,11 @@ class NotificationsManager {
                 </div>
                 <div class="notification-controls">
                     ${isUnread ? `
-                        <button class="control-btn mark-read" onclick="notificationsManager.markAsRead('${notification.id}')" title="Mark as read">
+                        <button class="control-btn mark-read" onclick="notificationsManager.markAsRead('${sanitizedId}')" title="Mark as read">
                             <i class="fas fa-check"></i>
                         </button>
                     ` : ''}
-                    <button class="control-btn delete" onclick="notificationsManager.deleteNotification('${notification.id}')" title="Delete">
+                    <button class="control-btn delete" onclick="notificationsManager.deleteNotification('${sanitizedId}')" title="Delete">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
@@ -314,16 +346,19 @@ class NotificationsManager {
         // Mark as read when user clicks action
         await this.markAsRead(notificationId);
         
+        // Sanitize the actionUrl to prevent XSS
+        const sanitizedActionUrl = this.escapeHTMLAttribute(actionUrl);
+        
         // Navigate to the action URL
-        if (actionUrl.startsWith('#')) {
+        if (sanitizedActionUrl.startsWith('#')) {
             // Internal navigation
             if (window.afzMemberHub && window.afzMemberHub.switchSection) {
-                const sectionName = actionUrl.replace('#', '');
+                const sectionName = sanitizedActionUrl.replace('#', '');
                 window.afzMemberHub.switchSection(sectionName);
             }
-        } else if (actionUrl.startsWith('/') || actionUrl.startsWith('http')) {
+        } else if (sanitizedActionUrl.startsWith('/') || sanitizedActionUrl.startsWith('http')) {
             // External or relative navigation
-            window.open(actionUrl, '_blank');
+            window.open(sanitizedActionUrl, '_blank');
         }
         
         // Close notification panel

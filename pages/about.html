@@ -1243,12 +1243,68 @@
     </style>
 </head>
 <body>
-    <!-- Redesigned Header -->
-    <header class="site-header" role="banner">
-        <div class="header-container">
-            <div class="header-logo">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!--#include file="../templates/header-template.html" -->
+
+    <main>
+        <section id="about-section">
+            <h2>About Us</h2>
+            <p>
+                We are a non-profit organization dedicated to promoting awareness and supporting individuals with albinism in Zambia. Our mission is to advocate for equal rights and opportunities, and to provide educational and medical support to our community.
+            </p>
+        </section>
+        <section id="services-section">
+            <h2>Our Services</h2>
+            <p>
+                We offer a variety of services, including advocacy, educational workshops, and medical assistance.
+            </p>
+        </section>
+        <section id="partners-section">
+            <h2>Our Partners</h2>
+            <p>
+                We are proud to partner with various organizations that share our values and contribute to our mission.
+            </p>
+            <div class="partners-list">
+                <div class="partners-logo">
+                    <img src="../images/partner1.jpg" alt="Partner 1">
+                    <span class="partners-logo-text">Partner 1</span>
+                </div>
+                <div class="partners-logo">
+                    <img src="../images/partner2.jpg" alt="Partner 2">
+                    <span class="partners-logo-text">Partner 2</span>
+                </div>
+                <div class="partners-logo">
+                    <img src="../images/partner3.jpg" alt="Partner 3">
+                    <span class="partners-logo-text">Partner 3</span>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials-section">
+            <h2>Testimonials</h2>
+            <blockquote>
+                "Thanks to AFZ, I feel more empowered to stand up for myself and my community."
+            </blockquote>
+            <blockquote>
+                "The support I've received from AFZ has made a significant difference in my life."
+            </blockquote>
+        </section>
+    </main>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-logo">
                 <img src="../favicon.jpg" alt="AFZ Logo">
-                <span class="header-logo-text">Albinism Foundation of Zambia</span>
+                <span class="footer-logo-text">Albinism Foundation of Zambia</span>
+            </div>
+            <div class="footer-nav">
+                <nav>
+                    <ul>
+                        <li><a href="#about-section">About Us</a></li>
+                        <li><a href="#services-section">Our Services</a></li>
+                        <li><a href="#partners-section">Our Partners</a></li>
+                        <li><a href="#testimonials-section">Testimonials</a></li>
+                    </ul>
+                </nav>
             </div>
             <nav class="header-nav">
                 <div class="header-menu">
